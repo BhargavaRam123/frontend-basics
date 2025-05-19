@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="testform">
+      <div>
+        <input type="text"  name="firstname" title="last"/>
+      </div>
+      <div>
+        <input type="radio"  id="student" name="category" value="student" />
+        <label for="student">student</label>
+    </div>
+    <div>
+        <input type="radio" id="teacher" name="category" value="teacher" />
+        <label for="teacher">teacher</label>
+    </div>
+    <div>
+        <input type="radio" id="unemployed" name="category" value="unemployed" />
+        <label for="unemployed">unemployed</label>
+    </div>
+      <div>
+        <input type="checkbox" name="human" id="human" value="true" />
+        <label for="human">Are you human?</label>
+      </div>
+      <button type="submit">click to submit</button>
+    </form>
+    <script>
+      document.getElementById("testform").addEventListener("submit", function(e) {
+        e.preventDefault();
+        let output = "";
+        let fd = new FormData(this);
+        for (let [key, value] of fd) {
+          output += key + ":" + value + "\n";
+        }
+        console.log(output);
+      });
+    </script>
+  </body>
+</html>
