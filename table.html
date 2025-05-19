@@ -6,19 +6,22 @@
     <title>Document</title>
     <style>
         table{
-            border: 1px solid black;
+            border-bottom: 1px solid black;
             width: 100%;
             border-collapse: collapse;   
             border-spacing: 20px;
         }
         th,td{
             /* padding: 10px;    */
-            border: 1px solid black;
+            border-bottom: 1px solid black;
             text-align: left;
-            border-style: dotted;
+            /* border-style: dotted; */
         }
         th:nth-child(even),td:nth-child(even)
         {
+            /* background-color: red; */
+        }
+        tr:hover{
             background-color: red;
         }
 
@@ -26,6 +29,10 @@
 </head>
 <body>
     <table>
+        <colgroup>
+        <col span="2" style="background-color: aquamarine;">
+        
+       </colgroup>
         <caption>Student Data</caption>
         <tr style="height: 100px;">
             <th style="width: 70%;">name</th>
