@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Basic styling for the container */
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin: 100px auto;
+  max-width: 800px;
+}
+
+/* Base card styling */
+.card {
+  width: 200px;
+  height: 250px;
+  background-color: #3498db;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Scale transform on hover */
+.card-scale:hover {
+  transform: scale(1.1);
+}
+
+/* Rotate transform on hover */
+.card-rotate:hover {
+  transform: rotate(10deg);
+}
+
+/* Combined transforms on hover */
+.card-combo:hover {
+  transform: translateY(-20px) rotate(-5deg) scale(1.05);
+}
+
+/* 3D transform with perspective */
+.card-3d {
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: perspective(500px) rotateY(15deg) rotateX(10deg);
+}
+.test *{
+    background-color: red;
+    transform: translateY(100px);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+  <div class="card card-scale">Scale</div>
+  <div class="card card-rotate">Rotate</div>
+  <div class="card card-combo">Combined</div>
+  <div class="card card-3d">3D Transform</div>
+</div>
+<div class="test">
+    <div>
+        this is a para
+    </div>
+</div>
+</body>
+</html>
