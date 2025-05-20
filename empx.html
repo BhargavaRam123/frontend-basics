@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>px vs em Comparison</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 16px; /* Base font size */
+        }
+
+        /* Toggle button styles */
+        .toggle-container {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 8px 16px;
+            margin-right: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Example containers */
+        .example {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .parent {
+            /* Starting with larger font */
+            font-size: 20px;
+            background-color: #eee;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Pixel-based elements */
+        .px-box {
+            width: 200px;
+            height: 60px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .px-text {
+            font-size: 18px;
+        }
+
+        /* Em-based elements */
+        .em-box {
+            width: 10em; /* 10 × parent font size */
+            height: 3em; /* 3 × parent font size */
+            padding: 0.5em; /* 0.5 × parent font size */
+            margin-bottom: 1em; /* 1 × parent font size */
+            background-color: #3498db;
+            color: white;
+        }
+
+        .em-text {
+            font-size: 0.9em; /* 0.9 × parent font size */
+        }
+
+        /* Nested example to show em compounding */
+        .nested {
+            padding: 1em;
+            border: 1px solid #bbb;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Labels for better understanding */
+        .label {
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Sizes display */
+        .size-info {
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pixel (px) vs Em (em) Comparison</h1>
+    
+    <div class="toggle-container">
+        <p>Click buttons to change the base font size and see how elements react:</p>
+        <button onclick="document.body.style.fontSize = '12px'">Small (12px)</button>
+        <button onclick="document.body.style.fontSize = '16px'">Normal (16px)</button>
+        <button onclick="document.body.style.fontSize = '24px'">Large (24px)</button>
+    </div>
+
+    <div class="example">
+        <h2>Basic Comparison</h2>
+        <p>Body font size: <span id="bodySize"></span></p>
+        
+        <div class="px-box">
+            <div class="px-text">This text is 18px</div>
+            <div class="label">Width: 200px, Height: 60px, Padding: 10px</div>
+        </div>
+        
+        <div class="em-box">
+            <div class="em-text">This text is 0.9em</div>
+            <div class="label">Width: 10em, Height: 3em, Padding: 0.5em</div>
+        </div>
+        
+        <div class="size-info">
+            <div>• Pixel box dimensions are fixed regardless of font size</div>
+            <div>• Em box dimensions change when the font size changes</div>
+        </div>
+    </div>
+    
+    <div class="example">
+        <h2>Nesting Behavior (Compounding Effect)</h2>
+        <p>Watch how em values compound when elements are nested:</p>
+        
+        <div class="parent">
+            Parent: Font Size = 20px
+            
+            <div class="nested">
+                First Nesting: Font Size = 1em (= 20px)
+                
+                <div class="nested">
+                    Second Nesting: Font Size = 1em of parent (= 20px)
+                    
+                    <div class="nested">
+                        Third Nesting: Font Size = 1em of parent (= 20px)
+                        
+                        <div class="px-text">
+                            Fixed 18px text doesn't change with nesting
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="size-info">
+            <div>• If each nested element used font-size: 1.2em, sizes would compound:</div>
+            <div>• Parent (20px) → 1st (24px) → 2nd (28.8px) → 3rd (34.56px)</div>
+        </div>
+    </div>
+
+    <script>
+        // Display current body font size
+        function updateFontSize() {
+            const bodySize = window.getComputedStyle(document.body).fontSize;
+            document.getElementById('bodySize').textContent = bodySize;
+        }
+        
+        // Update initially and when buttons are clicked
+        updateFontSize();
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('click', updateFontSize);
+        });
+    </script>
+</body>
+</html>
