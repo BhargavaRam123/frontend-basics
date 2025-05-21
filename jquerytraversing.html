@@ -24,7 +24,15 @@
         //find the span element in the descendents of div we can also use find(*) to target all descendents
         // $("div").siblings().css({ color: "red", border: "2px solid red" });
         //this will find all the siblings in the code
-        $("div").siblings("p").css({ color: "red", border: "2px solid red" });
+        // $("div").siblings("p").css({ color: "red", border: "2px solid red" });
+        //give the paramater to specify which sibling element you want to target
+        // $("div").next().css({ color: "red", border: "2px solid red" });
+        // $("div").nextAll().css({ color: "red", border: "2px solid red" });
+
+        // similar to nextall there is another method called nextUntil() and similar to next there also prev() they have the same functions as next()
+
+        //jquery filtering
+        $("p").first().css({ color: "red", border: "2px solid red" });
       });
     </script>
   </head>
@@ -49,6 +57,6 @@
         </p>
       </div>
     </div>
-    <div>hello world</div>
+    <p>hello world</p>
   </body>
 </html>
