@@ -14,7 +14,9 @@
     <script>
       $(document).ready(function () {
         //giving parameters to parents()
-        $("span").parents("ul").css({ color: "red", border: "2px solid red" });
+        $("span")
+          .parentsUntil("div")
+          .css({ color: "red", border: "2px solid red" });
       });
     </script>
   </head>
