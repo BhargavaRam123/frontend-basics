@@ -20,8 +20,11 @@
         //   });
         // $("div").children().css({ color: "red", border: "2px solid red" });
         //you can give the optional parameters to the children() like classnameelementname like that
-        $("div").find("span").css({ color: "red", border: "2px solid red" });
+        // $("div").find("span").css({ color: "red", border: "2px solid red" });
         //find the span element in the descendents of div we can also use find(*) to target all descendents
+        // $("div").siblings().css({ color: "red", border: "2px solid red" });
+        //this will find all the siblings in the code
+        $("div").siblings("p").css({ color: "red", border: "2px solid red" });
       });
     </script>
   </head>
@@ -37,7 +40,7 @@
           </li>
         </ul>
       </div>
-
+      <p>hi iam a sibling</p>
       <div style="width: 500px">
         div (grandparent)
         <p>
@@ -46,5 +49,6 @@
         </p>
       </div>
     </div>
+    <div>hello world</div>
   </body>
 </html>
