@@ -18,8 +18,10 @@
         //       .parentsUntil("div")
         //       .css({ color: "red", border: "2px solid red" });
         //   });
-        $("div").children().css({ color: "red", border: "2px solid red" });
+        // $("div").children().css({ color: "red", border: "2px solid red" });
         //you can give the optional parameters to the children() like classnameelementname like that
+        $("div").find("span").css({ color: "red", border: "2px solid red" });
+        //find the span element in the descendents of div we can also use find(*) to target all descendents
       });
     </script>
   </head>
