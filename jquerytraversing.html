@@ -14,9 +14,12 @@
     <script>
       $(document).ready(function () {
         //giving parameters to parents()
-        $("span")
-          .parentsUntil("div")
-          .css({ color: "red", border: "2px solid red" });
+        //     $("span")
+        //       .parentsUntil("div")
+        //       .css({ color: "red", border: "2px solid red" });
+        //   });
+        $("div").children().css({ color: "red", border: "2px solid red" });
+        //you can give the optional parameters to the children() like classnameelementname like that
       });
     </script>
   </head>
