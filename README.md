@@ -17,7 +17,6 @@ This collection contains various exercises and examples covering HTML5, CSS3, Ja
   - Effects and animations
   - Method chaining
   - AJAX requests and response management
-  - Array methods (grep, map, filter, sort)
 
 ### HTML5 & CSS3
 - **HTML5 Features**
@@ -43,19 +42,6 @@ This collection contains various exercises and examples covering HTML5, CSS3, Ja
   - Float-based layouts
   - Flexbox implementations
   - Responsive grid systems
-
-### Bootstrap & Frameworks
-- **Bootstrap 4**
-  - Grid system
-  - Components and utilities
-  - Responsive breakpoints
-  - Custom styling
-
-### Graphics & Media
-- **SVG & Vector Graphics**
-  - SVG drawing and manipulation
-  - Vector-based illustrations
-  - Interactive graphics
 
 - **Media Integration**
   - Image optimization
