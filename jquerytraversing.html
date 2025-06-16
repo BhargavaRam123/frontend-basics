@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .ancestors * {
+        display: block;
+        border: 2px solid lightgrey;
+        color: lightgrey;
+        padding: 5px;
+        margin: 15px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        //giving parameters to parents()
+        //     $("span")
+        //       .parentsUntil("div")
+        //       .css({ color: "red", border: "2px solid red" });
+        //   });
+        // $("div").children().css({ color: "red", border: "2px solid red" });
+        //you can give the optional parameters to the children() like classnameelementname like that
+        // $("div").find("span").css({ color: "red", border: "2px solid red" });
+        //find the span element in the descendents of div we can also use find(*) to target all descendents
+        // $("div").siblings().css({ color: "red", border: "2px solid red" });
+        //this will find all the siblings in the code
+        // $("div").siblings("p").css({ color: "red", border: "2px solid red" });
+        //give the paramater to specify which sibling element you want to target
+        // $("div").next().css({ color: "red", border: "2px solid red" });
+        // $("div").nextAll().css({ color: "red", border: "2px solid red" });
+
+        // similar to nextall there is another method called nextUntil() and similar to next there also prev() they have the same functions as next()
+
+        //jquery filtering
+        // $("p").first().css({ color: "red", border: "2px solid red" });
+        // $("p").last().css({ color: "red", border: "2px solid red" });
+        $("p").eq(2).css({ color: "red", border: "2px solid red" });
+        //.filter() elements that satisfy the following criteria will be  .not() is the opposite of filter it gives all the unsatisfied conditions
+      });
+    </script>
+  </head>
+  <body>
+    <div class="ancestors">
+      <div style="width: 500px">
+        div (great-grandparent)
+        <ul>
+          ul (grandparent)
+          <li>
+            li (direct parent)
+            <span>span</span>
+          </li>
+        </ul>
+      </div>
+      <p>hi iam a sibling</p>
+      <div style="width: 500px">
+        div (grandparent)
+        <p>
+          p (direct parent)
+          <span>span</span>
+        </p>
+      </div>
+    </div>
+    <p>hello world</p>
+  </body>
+</html>

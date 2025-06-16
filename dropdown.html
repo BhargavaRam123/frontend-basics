@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .dropdown {
+        display: inline-block;
+        position: relative;
+        background-color: aqua;
+      }
+      .dropdowncontent {
+        display: none;
+        /* right: 0; */
+        /* left: 0; */
+        position: absolute;
+      }
+      .dropdown:hover .dropdowncontent {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dropdown">
+      <span>hover over me</span>
+      <div class="dropdowncontent">hello world</div>
+    </div>
+    <!-- <div>new content</div> -->
+  </body>
+</html>
